@@ -15,7 +15,7 @@ spring:
          - id: resume-service
            uri: lb://USER-SERVICE
            predicates:
-             - Path=api/resumes/**
+             - Path=/api/resumes/**
          - id: tracker-service
            uri: lb://APPLICATION-TRACKER-SERVICE
            predicates:
@@ -27,7 +27,7 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://locahost:8761/eureka
+      defaultZone: http://localhost:8761/eureka
 
   instance:
     prefer-ip-address: true
