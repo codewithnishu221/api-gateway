@@ -24,6 +24,10 @@ spring:
            uri: lb://MATCH-SERVICE
            predicates:
              - Path=/api/match/**
+         - id: interview-prep-service
+           uri: lb://INTERVIEW-PREP-SERVICE
+           predicates:
+              - Path=/api/interview-prep/**
 eureka:
   client:
     service-url:
