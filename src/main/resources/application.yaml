@@ -28,6 +28,10 @@ spring:
            uri: lb://INTERVIEW-PREP-SERVICE
            predicates:
               - Path=/api/interview-prep/**
+         - id: tracker-internal
+           uri: lb://APPLICATION-TRACKER-SERVICE
+           predicates:
+               - Path=/api/applications/internal/**
 eureka:
   client:
     service-url:
