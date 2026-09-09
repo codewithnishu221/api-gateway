@@ -1,0 +1,28 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: user-service
+          uri: lb://USER-SERVICE
+          predicates:
+            - Path=/api/users/**
+        - id: resume-service
+          uri: lb://USER-SERVICE
+          predicates:
+            - Path=/api/resumes/**
+        - id: tracker-service
+          uri: lb://APPLICATION-TRACKER-SERVICE
+          predicates:
+              - Path=/api/application/**
+        - id: match-service
+          uri: lb://MATCH-SERVICE
+          predicates:
+              - Path=/api/match/**
+        - id: interview-prep-service
+          uri: lb://INTERVIEW-PREP-SERVICE
+          predicates:
+              - Path=/api/interview-prep/**
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka-server:8761/eureka
